@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { toggleTodo } from '../actions';
 
-const Todo = ({
+const ElasticsearchIndex = ({
   onClick,
   completed,
   text
@@ -27,7 +27,7 @@ const Todo = ({
 );
 
 const ElasticsearchIndexList = ({
-  todos,
+  elasticsearchIndices,
   onTodoClick
   }) => (
   <ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addTodo } from '../actions';
+import { addElasticsearchIndex } from '../actions';
 
 let AddTodo = ({ dispatch }) => {
   let input;
@@ -12,7 +12,7 @@ let AddTodo = ({ dispatch }) => {
         input = node;
       }} />
       <button onClick={() => {
-        dispatch(addTodo(input.value));
+        dispatch(addElasticsearchIndex(input.value));
         input.value = '';
       }}>
         Add Todo

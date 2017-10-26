@@ -1,23 +1,24 @@
-let nextTodoId = 0;
+let nextIndexId = 0;
+import * as types from '../constants/ActionTypes'
 
-export const addTodo = (text) => {
+export const addElasticsearchIndex = (indexName) => {
   return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
+    type: types.ADD_ELASTICSEARCH_INDEX,
+    id: nextIndexId++,
+    indexName
   };
 };
 
 export const toggleTodo = (id) => {
   return {
-    type: 'TOGGLE_TODO',
+    type: types.TOGGLE_TODO,
     id
   };
 };
 
 export const setVisibilityFilter = (filter) => {
   return {
-    type: 'SET_VISIBILITY_FILTER',
+    type: types.SET_VISIBILITY_FILTER,
     filter
   };
 };

@@ -1,14 +1,14 @@
 import { createStore, combineReducers } from 'redux';
 
-const todo = (state, action) => {
+const elasticsearchIndex = (state, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'ADD_ELASTICSEARCH_INDEX':
       return {
         id: action.id,
         text: action.text,
         completed: false
       };
-    case 'TOGGLE_TODO':
+    case 'TOGGLE_ELASTICSEARCH_INDEX':
       if (state.id !== action.id) {
         return state;
       }
@@ -22,16 +22,16 @@ const todo = (state, action) => {
   }
 };
 
-const todos = (state = [], action) => {
+const elasticsearchIndices = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'ADD_ELASTICSEARCH_INDEX':
       return [
         ...state,
-        todo(undefined, action)
+        elasticsearchIndex(undefined, action)
       ];
-    case 'TOGGLE_TODO':
-      return state.map(t =>
-          todo(t, action)
+    case 'TOGGLE_ELASTICSEARCH_INDEX':
+      return state.map(esi =>
+        elasticsearchIndex(esi, action)
       );
     default:
       return state;
@@ -50,9 +50,9 @@ const visibilityFilter = (
   }
 };
 
-const todoApp = combineReducers({
-  todos,
+const elasticsearchIndexManagerApp = combineReducers({
+  elasticsearchIndices,
   visibilityFilter
 });
 
-export default createStore(todoApp)
+export default createStore(elasticsearchIndexManagerApp)
