@@ -26,7 +26,7 @@ const Todo = ({
   </li>
 );
 
-const TodoList = ({
+const ElasticsearchIndexList = ({
   todos,
   onTodoClick
   }) => (
@@ -81,4 +81,4 @@ const mapDispatchToProps = (
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList);
+)(ElasticsearchIndexList);

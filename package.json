@@ -4,7 +4,7 @@
   "description": "Todo app using React, Redux and Webpack. Based on the example from Dan Abramov's excellent tutorial (https://egghead.io/series/getting-started-with-redux)",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --host 0.0.0.0 --hot --inline"
   },
   "keywords": [
     "todo"

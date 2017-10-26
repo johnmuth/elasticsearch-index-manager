@@ -18,4 +18,14 @@ Forked from [todo-redux-react-webpack](https://github.com/sadams/todo-redux-reac
 
 The application should be visible on http://localhost:8080
 
+## Docker
+
+```
+docker build -t local/elasticsearch-index-manager .
+docker run -p 8080:8080 --name elasticsearch-index-manager -d local/elasticsearch-index-manager
+```
+
+```
+docker rm -f elasticsearch-index-manager
+```
 
